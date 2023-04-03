@@ -94,13 +94,13 @@ public class CustomerServiceImpl implements CustomerService {
 		// booking will be saved in db by cascade using customer
 
 		// sending email
-		String text = "You have booked cab. Your tripID: " + tripBooking.getTripBookingId() +"and driver Mob: "+ driver.getMobile();
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("amolnakhate240@gmail.com");
-		message.setTo(customer.getEmail());
-		message.setSubject("Cab booked");
-		message.setText(text);
-		emailSender.send(message);
+//		String text = "You have booked cab. Your tripID: " + tripBooking.getTripBookingId() +"and driver Mob: "+ driver.getMobile();
+//		SimpleMailMessage message = new SimpleMailMessage();
+//		message.setFrom("amolnakhate240@gmail.com");
+//		message.setTo(customer.getEmail());
+//		message.setSubject("Cab booked");
+//		message.setText(text);
+//		emailSender.send(message);
 
 		return tripBooking;
 
@@ -118,14 +118,14 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.getDriver().getCab().setAvailable(true);
 
 		// sending email
-		String text = "You have cancelled cab";
-
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("amolnakhate240@gmail.com");
-		message.setTo(tripBooking.getCustomer().getEmail());
-		message.setSubject("Cab cancelled");
-		message.setText(text);
-		emailSender.send(message);
+//		String text = "You have cancelled cab";
+//
+//		SimpleMailMessage message = new SimpleMailMessage();
+//		message.setFrom("amolnakhate240@gmail.com");
+//		message.setTo(tripBooking.getCustomer().getEmail());
+//		message.setSubject("Cab cancelled");
+//		message.setText(text);
+//		emailSender.send(message);
 
 		tripBookingRepository2.save(tripBooking);
 
@@ -144,14 +144,14 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.getDriver().getCab().setAvailable(true);
 
 		// sending email
-		String text = "You have completed journey and your bill is "+bill+" Rs.";
-
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("amolnakhate240@gmail.com");
-		message.setTo(tripBooking.getCustomer().getEmail());
-		message.setSubject("Journey completed");
-		message.setText(text);
-		emailSender.send(message);
+//		String text = "You have completed journey and your bill is "+bill+" Rs.";
+//
+//		SimpleMailMessage message = new SimpleMailMessage();
+//		message.setFrom("amolnakhate240@gmail.com");
+//		message.setTo(tripBooking.getCustomer().getEmail());
+//		message.setSubject("Journey completed");
+//		message.setText(text);
+//		emailSender.send(message);
 
 		tripBookingRepository2.save(tripBooking);
 
